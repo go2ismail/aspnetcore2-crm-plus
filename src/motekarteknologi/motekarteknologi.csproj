@@ -18,4 +18,35 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\asset\Controllers\" />
+    <Folder Include="Areas\asset\Data\" />
+    <Folder Include="Areas\asset\Models\" />
+    <Folder Include="Areas\asset\Views\" />
+    <Folder Include="Areas\crm\Controllers\" />
+    <Folder Include="Areas\crm\Data\" />
+    <Folder Include="Areas\crm\Models\" />
+    <Folder Include="Areas\crm\Views\" />
+    <Folder Include="Areas\hcm\Controllers\" />
+    <Folder Include="Areas\hcm\Data\" />
+    <Folder Include="Areas\hcm\Models\" />
+    <Folder Include="Areas\hcm\Views\" />
+    <Folder Include="Areas\inventory\Controllers\" />
+    <Folder Include="Areas\inventory\Data\" />
+    <Folder Include="Areas\inventory\Models\" />
+    <Folder Include="Areas\inventory\Views\" />
+    <Folder Include="Areas\project\Controllers\" />
+    <Folder Include="Areas\project\Data\" />
+    <Folder Include="Areas\project\Models\" />
+    <Folder Include="Areas\project\Views\" />
+    <Folder Include="Areas\purchase\Controllers\" />
+    <Folder Include="Areas\purchase\Data\" />
+    <Folder Include="Areas\purchase\Models\" />
+    <Folder Include="Areas\purchase\Views\" />
+    <Folder Include="Areas\sales\Controllers\" />
+    <Folder Include="Areas\sales\Data\" />
+    <Folder Include="Areas\sales\Models\" />
+    <Folder Include="Areas\sales\Views\" />
+  </ItemGroup>
+
 </Project>
