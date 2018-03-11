@@ -20,6 +20,8 @@ namespace motekarteknologi.Areas.crm.Controllers
             _context = context;
         }
 
+      
+
         // GET: crm/ActivityTypes
         public async Task<IActionResult> Index()
         {

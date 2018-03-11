@@ -1,0 +1,44 @@
+﻿<aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+        
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">MAIN NAVIGATION</li>
+            <li class="@Html.IsSelected(controller: "Dashboards")">
+                <a href="@Url.Action("Index", "Dashboards", new { Area = "crm" })">
+                    <i class="fa fa-th"></i> <span>Dashboards</span>
+                </a>
+            </li>
+            <li class="@Html.IsSelected(controller: "Leads")">
+                <a href="@Url.Action("Index", "Leads", new { Area = "crm" })">
+                    <i class="fa fa-th"></i> <span>Leads</span>
+                </a>
+            </li>
+            <li class="@Html.IsSelected(controller: "Opportunities")">
+                <a href="@Url.Action("Index", "Opportunities")">
+                    <i class="fa fa-th"></i> <span>Opportunities</span>
+                </a>
+            </li>
+            <li class="@Html.IsSelected(controller: "Customers")">
+                <a href="@Url.Action("Index", "Customers")">
+                    <i class="fa fa-th"></i> <span>Customers</span>
+                </a>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="~/AdminLTE/index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+                    <li><a href="~/AdminLTE/index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+</aside>
