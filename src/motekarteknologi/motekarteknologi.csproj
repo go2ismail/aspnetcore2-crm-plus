@@ -23,10 +23,7 @@
     <Folder Include="Areas\asset\Data\" />
     <Folder Include="Areas\asset\Models\" />
     <Folder Include="Areas\asset\Views\" />
-    <Folder Include="Areas\crm\Controllers\" />
     <Folder Include="Areas\crm\Data\" />
-    <Folder Include="Areas\crm\Models\" />
-    <Folder Include="Areas\crm\Views\" />
     <Folder Include="Areas\hcm\Controllers\" />
     <Folder Include="Areas\hcm\Data\" />
     <Folder Include="Areas\hcm\Models\" />
@@ -47,6 +44,8 @@
     <Folder Include="Areas\sales\Data\" />
     <Folder Include="Areas\sales\Models\" />
     <Folder Include="Areas\sales\Views\" />
+    <Folder Include="Enums\" />
+    <Folder Include="Statics\" />
   </ItemGroup>
 
 </Project>

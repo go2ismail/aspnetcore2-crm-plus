@@ -1,0 +1,82 @@
+﻿@model motekarteknologi.Areas.crm.Models.Opportunity
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Opportunity</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ExpectedRevenue" class="control-label"></label>
+                <input asp-for="ExpectedRevenue" class="form-control" />
+                <span asp-validation-for="ExpectedRevenue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Priority" class="control-label"></label>
+                <input asp-for="Priority" class="form-control" />
+                <span asp-validation-for="Priority" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="IsWon" /> @Html.DisplayNameFor(model => model.IsWon)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="IsLost" /> @Html.DisplayNameFor(model => model.IsLost)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExpectedClosing" class="control-label"></label>
+                <input asp-for="ExpectedClosing" class="form-control" />
+                <span asp-validation-for="ExpectedClosing" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ActualClosing" class="control-label"></label>
+                <input asp-for="ActualClosing" class="form-control" />
+                <span asp-validation-for="ActualClosing" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="CreatedDateUtc" class="control-label"></label>
+                <input asp-for="CreatedDateUtc" class="form-control" />
+                <span asp-validation-for="CreatedDateUtc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
