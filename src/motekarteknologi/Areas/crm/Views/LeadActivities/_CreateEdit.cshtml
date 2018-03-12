@@ -1,0 +1,53 @@
+﻿@model motekarteknologi.Areas.crm.Models.LeadActivity
+<div class="row">
+    <div class="col-lg-12">
+        <div class="box box-primary">
+            <div class="box-body">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label asp-for="From" class="control-label"></label>
+                            <input asp-for="From" class="form-control" />
+                            <span asp-validation-for="From" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label asp-for="To" class="control-label"></label>
+                            <input asp-for="To" class="form-control" />
+                            <span asp-validation-for="To" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label asp-for="Name" class="control-label"></label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label asp-for="Description" class="control-label"></label>
+                            <input asp-for="Description" class="form-control" />
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                    </div>
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4"></div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+</div>

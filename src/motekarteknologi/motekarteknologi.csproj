@@ -45,7 +45,6 @@
     <Folder Include="Areas\sales\Models\" />
     <Folder Include="Areas\sales\Views\" />
     <Folder Include="Enums\" />
-    <Folder Include="Statics\" />
   </ItemGroup>
 
 </Project>

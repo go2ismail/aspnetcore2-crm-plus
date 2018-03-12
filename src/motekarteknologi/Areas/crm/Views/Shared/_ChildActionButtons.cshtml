@@ -1,0 +1,24 @@
+﻿@using motekarteknologi.Areas.crm.ViewModels.Common
+@model ChildActionButton
+
+@{
+    string currentAction = (string)this.ViewContext.RouteData.Values["action"];
+    string currentController = (string)this.ViewContext.RouteData.Values["controller"];
+}
+
+<a class="btn btn-default" href="@Url.Action(currentAction, currentController, new ChildActionButton() {
+                                MasterActionName = Model.MasterActionName,
+                                MasterControllerName = Model.MasterControllerName
+ } )">Cancel</a>
+@if (currentAction.Equals("Create"))
+{
+    <input type="submit" value="Save" class="btn btn-default" />
+}
+else if (currentAction.Equals("Edit"))
+{
+    <input type="submit" value="Save" class="btn btn-default" />
+}
+else if (currentAction.Equals("Delete"))
+{
+    <input type="submit" value="Delete" class="btn btn-default" />
+}

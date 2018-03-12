@@ -1,0 +1,14 @@
+﻿@using motekarteknologi.Areas.crm.ViewModels.Common
+@model ChildGridAction
+
+@{
+    string currentAction = (string)this.ViewContext.RouteData.Values["action"];
+}
+@if (!String.IsNullOrEmpty(currentAction)
+   && currentAction.Equals("Edit"))
+{
+    <a class="btn btn-default" href="@Url.Action("Edit", Model.DestinationControllerName, new { ID = Model.ID, MasterID = Model.MasterID } )">Edit</a>
+    <a class="btn btn-default" href="@Url.Action("Details", Model.DestinationControllerName, new { ID = Model.ID, MasterID = Model.MasterID } )">Details</a>
+    <a class="btn btn-default" href="@Url.Action("Delete", Model.DestinationControllerName, new { ID = Model.ID, MasterID = Model.MasterID } )">Delete</a>
+}
+

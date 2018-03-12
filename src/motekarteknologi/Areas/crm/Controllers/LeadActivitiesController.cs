@@ -20,6 +20,7 @@ namespace motekarteknologi.Areas.crm.Controllers
             _context = context;
         }
 
+
         // GET: crm/LeadActivities
         public async Task<IActionResult> Index()
         {
@@ -45,8 +46,17 @@ namespace motekarteknologi.Areas.crm.Controllers
         }
 
         // GET: crm/LeadActivities/Create
-        public IActionResult Create()
+        public IActionResult Create(Guid? ID,
+            string MasterControllerName,
+           string MasterActionName)
         {
+            if (ID != null &&
+               !String.IsNullOrEmpty(MasterControllerName) &&
+               !String.IsNullOrEmpty(MasterActionName))
+            {
+                return RedirectToAction(MasterActionName, MasterControllerName, new { ID = ID });
+            }
+
             return View();
         }
 
@@ -55,24 +65,37 @@ namespace motekarteknologi.Areas.crm.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("From,To,ID,CreatedDateUtc,IsActive,Name,Description")] LeadActivity leadActivity)
+        public async Task<IActionResult> Create([Bind("From,To,ID,CreatedDateUtc,IsActive,Name,Description")] LeadActivity leadActivity, Guid? ID)
         {
             if (ModelState.IsValid)
             {
+                var masterid = ID;
+                Lead lead = await _context.Lead.Where(x => x.ID.Equals(masterid)).FirstOrDefaultAsync();
                 leadActivity.ID = Guid.NewGuid();
+                leadActivity.Lead = lead;
                 _context.Add(leadActivity);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Edit", "Leads", new { ID = masterid });
             }
             return View(leadActivity);
         }
 
         // GET: crm/LeadActivities/Edit/5
-        public async Task<IActionResult> Edit(Guid? id)
+        public async Task<IActionResult> Edit(Guid? id,
+            Guid? MasterID,
+            string MasterControllerName,
+           string MasterActionName)
         {
             if (id == null)
             {
                 return NotFound();
+            }
+
+            if (MasterID != null &&
+              !String.IsNullOrEmpty(MasterControllerName) &&
+              !String.IsNullOrEmpty(MasterActionName))
+            {
+                return RedirectToAction(MasterActionName, MasterControllerName, new { ID = MasterID });
             }
 
             var leadActivity = await _context.LeadActivity.SingleOrDefaultAsync(m => m.ID == id);

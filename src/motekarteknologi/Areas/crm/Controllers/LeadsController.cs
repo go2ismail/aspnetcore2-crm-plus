@@ -35,6 +35,9 @@ namespace motekarteknologi.Areas.crm.Controllers
             }
 
             var lead = await _context.Lead
+                .Include(x => x.LineActivity)
+                .Include(x => x.LineAdditionalContact)
+                .Include(x => x.LineNote)
                 .SingleOrDefaultAsync(m => m.ID == id);
             if (lead == null)
             {
@@ -75,11 +78,19 @@ namespace motekarteknologi.Areas.crm.Controllers
                 return NotFound();
             }
 
-            var lead = await _context.Lead.SingleOrDefaultAsync(m => m.ID == id);
+            var lead = await _context.Lead
+                .Include(x => x.LineAdditionalContact)
+                .Include(x => x.LineNote)
+                .Include(x => x.LineActivity)
+                .SingleOrDefaultAsync(m => m.ID == id);
+
             if (lead == null)
             {
                 return NotFound();
             }
+
+            TempData[Statics.TempDataKey.MasterID] = id;
+
             return View(lead);
         }
 
@@ -127,6 +138,9 @@ namespace motekarteknologi.Areas.crm.Controllers
             }
 
             var lead = await _context.Lead
+                .Include(x => x.LineActivity)
+                .Include(x => x.LineAdditionalContact)
+                .Include(x => x.LineNote)
                 .SingleOrDefaultAsync(m => m.ID == id);
             if (lead == null)
             {

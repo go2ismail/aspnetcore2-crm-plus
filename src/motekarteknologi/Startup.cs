@@ -61,7 +61,7 @@ namespace motekarteknologi
             {
                 routes.MapRoute(
                   name: "areas",
-                  template: "{area:exists}/{controller=Dashboards}/{action=Index}/{id?}"
+                  template: "{area:exists=crm}/{controller=Dashboards}/{action=Index}/{id?}"
                 );
 
 
