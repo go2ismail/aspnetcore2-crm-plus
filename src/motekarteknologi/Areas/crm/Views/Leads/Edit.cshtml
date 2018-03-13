@@ -15,6 +15,7 @@
     <!-- Main content -->
     <section class="content">
         <form asp-action="Edit">
+            <input type="hidden" asp-for="ID" />
             @Html.Partial("_CreateEdit")
 
         </form>

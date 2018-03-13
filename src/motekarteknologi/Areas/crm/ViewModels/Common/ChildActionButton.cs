@@ -9,5 +9,6 @@ namespace motekarteknologi.Areas.crm.ViewModels.Common
     {
         public string MasterControllerName { get; set; }
         public string MasterActionName { get; set; }
+        public Guid MasterID { get; set; }
     }
 }

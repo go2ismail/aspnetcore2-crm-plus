@@ -89,6 +89,8 @@ namespace motekarteknologi.Areas.crm.Controllers
                 return NotFound();
             }
 
+            ViewBag.MasterID = id;
+
             TempData[Statics.TempDataKey.MasterID] = id;
 
             return View(lead);

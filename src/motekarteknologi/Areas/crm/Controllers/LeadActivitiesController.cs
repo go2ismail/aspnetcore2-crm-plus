@@ -46,16 +46,14 @@ namespace motekarteknologi.Areas.crm.Controllers
         }
 
         // GET: crm/LeadActivities/Create
-        public IActionResult Create(Guid? ID,
-            string MasterControllerName,
-           string MasterActionName)
+        public IActionResult Create(Guid? MasterID)
         {
-            if (ID != null &&
-               !String.IsNullOrEmpty(MasterControllerName) &&
-               !String.IsNullOrEmpty(MasterActionName))
+            if (MasterID != null)
             {
-                return RedirectToAction(MasterActionName, MasterControllerName, new { ID = ID });
+                ViewBag.MasterID = MasterID;
             }
+
+            
 
             return View();
         }

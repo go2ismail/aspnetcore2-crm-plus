@@ -7,13 +7,13 @@
 }
 
 <p>
-    @if (TempData[TempDataKey.MasterID] != null)
+    @if (ViewBag.MasterID != null)
     {
         @Html.Partial("_ChildCreateNew",
                        new ChildCreateNew()
                        {
                            ControllerName = "LeadActivities",
-                           MasterID = (Guid)TempData[TempDataKey.MasterID]
+                           MasterID = ViewBag.MasterID
                        })
     }
 

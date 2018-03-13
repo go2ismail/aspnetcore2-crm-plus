@@ -6,10 +6,7 @@
     string currentController = (string)this.ViewContext.RouteData.Values["controller"];
 }
 
-<a class="btn btn-default" href="@Url.Action(currentAction, currentController, new ChildActionButton() {
-                                MasterActionName = Model.MasterActionName,
-                                MasterControllerName = Model.MasterControllerName
- } )">Cancel</a>
+<a class="btn btn-default" href="@Url.Action(Model.MasterActionName, Model.MasterControllerName, new { ID = Model.MasterID } )">Cancel</a>
 @if (currentAction.Equals("Create"))
 {
     <input type="submit" value="Save" class="btn btn-default" />
